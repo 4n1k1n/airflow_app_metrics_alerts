@@ -5,7 +5,7 @@
 <p>В случае отклонения метрики отправляется информация в телеграм чат.</p>
 <h2>Структура данных в ClickHouse</h2>
 <h3>Таблица feed_actions</h3>
-<img src="feed">
+<img src="feed.jpg">
 <h3>Таблица message_actions</h3>
 <img src="message.jpg">
 <h2>Принцип проверки:</h2>
