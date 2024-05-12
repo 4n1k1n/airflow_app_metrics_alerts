@@ -5,6 +5,8 @@ import pandahouse as ph
 import numpy as np
 import datetime as dt
 import io
+from dotenv import load_dotenv
+import os
 import telegram
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
@@ -28,11 +30,12 @@ default_args = {
 schedule_interval = '*/15 * * * *' # каждые 15 минут
 
 # Вход для запросов, задаются параметры подключения к базе данных:
+load_dotenv()
 connection = {
-    'host': use_host_url,
-    'password': use_db_password,
-    'user': use_user_name,
-    'database': use_database
+    'host': 'https://' + os.getenv('DB_HOST'),
+    'password': os.getenv('DB_PASSWORD'),
+    'user': os.getenv('DB_USER'),
+    'database': os.getenv('DB_NAME')
 }
 # Задаются токен бота и id чата, в который будут отправляться алерты
 my_token = use_tg_bot_token
